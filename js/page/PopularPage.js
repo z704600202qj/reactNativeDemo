@@ -24,28 +24,29 @@ export default class PopularPage extends Component<Props> {
     _getTab() {
         const tabs = {}
         this.tabNames.forEach((item, index) => {
-            tabs[`tab${index}`] = {
-                screen: props=><PopularTab {...props} tabLabel={item}/>,
-                navigationOptions: {
-                    title: item
+
+                tabs[`tab${index}`] = {
+                    screen: (props) => <PopularTab {...props} tabLabel={item}/>,
+                    navigationOptions: {
+                        title: item
+                    }
                 }
-            }
         })
         return tabs
     }
 
     render() {
         const TabNav = createAppContainer(
-            createMaterialTopTabNavigator(this._getTab(),{
-                tabBarOptions:{
-                    tabStyle:styles.tabStyle,
-                    upperCaseLabel:false,  //标签是否大写
-                    scrollEnabled:true,  //是否支持滚动，选项卡滚动，默认false
-                    style:{
-                        backgroundColor:'#678'
+            createMaterialTopTabNavigator(this._getTab(), {
+                tabBarOptions: {
+                    tabStyle: styles.tabStyle,
+                    upperCaseLabel: false,  //标签是否大写
+                    scrollEnabled: true,  //是否支持滚动，选项卡滚动，默认false
+                    style: {
+                        backgroundColor: '#678'
                     },
-                    indicatorStyle:styles.indicatorStyle,
-                    labelStyle:styles.labelStyle,
+                    indicatorStyle: styles.indicatorStyle,
+                    labelStyle: styles.labelStyle,
                 }
             })
         )
@@ -80,16 +81,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
-    tabStyle:{
-        minWidth:50,
+    tabStyle: {
+        minWidth: 50,
     },
-    indicatorStyle:{
-        height:2,
-        backgroundColor:'#fff'
+    indicatorStyle: {
+        height: 2,
+        backgroundColor: '#fff'
     },
-    labelStyle:{
-        fontSize:13,
-        marginTop:5,
-        marginBottom:5
+    labelStyle: {
+        fontSize: 13,
+        marginTop: 5,
+        marginBottom: 5
     }
 });
