@@ -13,7 +13,6 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Entypo from 'react-native-vector-icons/Entypo'
 import {connect} from 'react-redux'
-import NavigationUtill from '../navigator/NavigationUtill'
 
 type Props = {};
 import PopularPage from '../page/PopularPage'
@@ -78,9 +77,9 @@ class DynamicTabNavigator extends Component<Props> {
 
     _tabNavigation() {
         if (this.Tabs) {
+
             return this.Tabs
         }
-        console.log(23);
         const {PopularPage, FavoritePage, MyPage, TrendingPage} = TABS
         const tabs = {  //根据需要动态改变tab
             PopularPage, TrendingPage, FavoritePage, MyPage
@@ -94,7 +93,6 @@ class DynamicTabNavigator extends Component<Props> {
     }
 
     render() {
-        NavigationUtill.navigation = this.props.navigation
         const Tab = createAppContainer(this._tabNavigation())
         return <Tab/>
     }

@@ -8,7 +8,7 @@ export default class NavigationUtill {
          */
         const navigation = NavigationUtill.navigation
         if (!navigation) {
-            console.error('navigation can not be null')
+            console.error('NavigationUtil.navigation can not be null')
             return
         }
         navigation.navigate(page, {...parmas})
