@@ -1,6 +1,7 @@
-import {onThemeChange, onShowCustomThemeView} from './theme';
+import {onThemeChange} from './theme';
+import {onLoadPopularData} from './popular'
 
 export default {
     onThemeChange,
-    onShowCustomThemeView,
+    onLoadPopularData
 }
